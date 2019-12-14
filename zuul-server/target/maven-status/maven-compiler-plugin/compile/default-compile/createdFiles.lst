@@ -1,0 +1,5 @@
+microservices/zuulserver/security/JwtConfig.class
+microservices/zuulserver/security/JwtAuthenticationEntryPoint.class
+microservices/zuulserver/security/SecurityTokenConfig.class
+microservices/zuulserver/security/JwtTokenAuthenticationFilter.class
+microservices/zuulserver/ZuulServerApplication.class
