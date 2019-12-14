@@ -1,0 +1,8 @@
+microservices/authentication/AuthenticationApplication.class
+microservices/authentication/security/UserDetailsServiceImpl$AppUser.class
+microservices/authentication/security/UserDetailsServiceImpl.class
+microservices/authentication/security/User.class
+microservices/authentication/security/SecurityCredentialsConfig.class
+microservices/authentication/security/JwtUsernameAndPasswordAuthenticationFilter$UserCredentials.class
+microservices/authentication/security/JwtUsernameAndPasswordAuthenticationFilter.class
+microservices/authentication/security/JwtConfig.class
