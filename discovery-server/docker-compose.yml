@@ -1,0 +1,75 @@
+version: '2.2'
+services:
+  discovery-server:
+    container_name: discovery-server
+    build:
+      context: .
+    image: eureka:latest
+    ports:
+      - 8761:8761
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'zhanna0611'
+      MYSQL_ROOT_PASSWORD: 'zhanna0611'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+
+
+
+
+  auth-service:
+    container_name: auth-service
+    build:
+      context: /Users/zhaneka/Downloads/CarRentService-master-2/authentication
+    image: authentication:latest
+    ports:
+        - 9100:9100
+
+  order-details:
+    container_name: order-details
+    build:
+      context: /Users/zhaneka/Downloads/CarRentService-master-2/order-details
+    image: order-details:latest
+    ports:
+      - 8081:8081
+
+#  order-history:
+#    container_name: order-history
+#    build:
+#      context: ../order-history
+#    image: order-history:latest
+#    ports:
+#      - 8082:8082
+
+#  payment-details:
+#    container_name: payment-details
+#    build:
+#      context: ../payment-details
+#    image: payment-details:latest
+#    ports:
+#      - 8083:8083
+
+  user-details:
+    container_name: user-details
+    build:
+      context: /Users/zhaneka/Downloads/CarRentService-master-2/user-details
+    image: user-details:latest
+    ports:
+      - 8084:8084
+
+  zuul-service:
+    container_name: zuul-service
+    build:
+      context: /Users/zhaneka/Downloads/CarRentService-master-2/zuul-server
+    image: zuul-server:latest
+    ports:
+      - 8762:8762
+
+
