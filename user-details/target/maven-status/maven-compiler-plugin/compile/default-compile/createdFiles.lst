@@ -1,0 +1,4 @@
+microservices/userdetails/UserController.class
+microservices/userdetails/User.class
+microservices/userdetails/UserDetailsApplication.class
+microservices/userdetails/repo/UserRepository.class
