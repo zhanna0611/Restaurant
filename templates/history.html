@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--=== Favicon ===-->
+<link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon" />
+
+<title>Cardoor - Car Rental HTML Template</title>
+
+<!--=== Bootstrap CSS ===-->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<!--=== Slicknav CSS ===-->
+<link th:href="@{/css/plugins/slicknav.min.css}" rel="stylesheet">
+<!--=== Magnific Popup CSS ===-->
+<link th:href="@{/css/plugins/magnific-popup.css}" rel="stylesheet">
+<!--=== Owl Carousel CSS ===-->
+<link th:href="@{/css/plugins/owl.carousel.min.css}" rel="stylesheet">
+<!--=== Gijgo CSS ===-->
+<link th:href="@{/css/plugins/gijgo.css}" rel="stylesheet">
+<!--=== FontAwesome CSS ===-->
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+<!--=== Theme Reset CSS ===-->
+<link th:href="@{/css/reset.css}" rel="stylesheet">
+<!--=== Main Style CSS ===-->
+<link th:href="@{/css/style.css}" rel="stylesheet">
+<!--=== Responsive CSS ===-->
+<link th:href="@{/css/responsive.css}" rel="stylesheet">
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2}
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+<body>
+
+<div class="col-lg-8 d-none d-xl-block">
+    <nav class="mainmenu alignright">
+        <ul>
+            <li><a th:href="@{/home}">Home</a>
+            </li>
+            <li class="active"><a th:href="@{/history}">History</a>
+            </li>
+            <li><a th:href="@{/about}">About</a>
+            </li>
+<!--            <li><a th:href="@{/login}">Login</a>-->
+<!--            </li>-->
+            <li><a th:href="@{/index}">BOOK NOW</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div th:switch="${history}">
+    <div th:case="*">
+        <table>
+            <thead>
+            <tr>
+                <th>Full name</th>
+                <th>Created at</th>
+                <th>Car type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="OrderHistory : ${history}">
+                <td th:text="${OrderHistory.fullname}"></td>
+                <td th:text="${OrderHistory.createdAt}"></td>
+                <td th:text="${OrderHistory.carType}"></td>
+            </tr>
+            </tbody>
+        </table>
+    <p><a th:href="@{/history/{userId}}">Show history</a></p>
+</div>
+
+</body>
+</html>
